@@ -38,3 +38,14 @@ model File {
   
   @@map("file")
 }
+
+model User {
+  id        Int      @id @default(autoincrement())
+  name      String?  @db.VarChar(50)
+  UserType  UserType 
+}
+
+enum UserType {
+  ADMIN
+  USER
+}
