@@ -12,3 +12,29 @@ datasource db {
   provider = "mysql"
   url      = env("DATABASE_URL")
 }
+
+model Notice {
+  id        Int      @id @default(autoincrement())
+  title     String?  @db.VarChar(50)
+  content   String?  @db.VarChar(50)
+  hitCount  Int      @default(0)
+  pinned    Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now()) @updatedAt
+  files     File[] //첨부파일
+
+  @@map("notice")
+}
+
+model File {
+  id        Int      @id @default(autoincrement())
+  name      String?  @db.VarChar(50)
+  mimeType  String?  @db.VarChar(50)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now()) @updatedAt
+  
+  noticeId  Int?     // Notice의 id
+  Notice    Notice?  @relation(fields: [noticeId], references: [id]) // Notice의 id를 참조
+  
+  @@map("file")
+}
