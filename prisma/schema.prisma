@@ -41,6 +41,7 @@ model File {
 
 model User {
   id        Int      @id @default(autoincrement())
+  loginId   String   @unique @db.VarChar(20)
   name      String?  @db.VarChar(50)
   UserType  UserType 
 }
