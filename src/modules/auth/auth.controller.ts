@@ -5,8 +5,8 @@ import { CommonResponseDto } from "../../common/dtos/common-response.dto";
 import { PositiveIntPipe } from "../../common/pipes/positive-int.pipe";
 import { AuthService } from "./auth.service";
 import { UseUserTypeGuard } from "./decorators/user-type-guard.decorator";
-import { LoginRequestDto } from "./dto/login-request.dto";
-import { LoginResponseDto } from "./dto/login-response.dto";
+import { LoginRequestDto } from "./dtos/login-request.dto";
+import { LoginResponseDto } from "./dtos/login-response.dto";
 import { JwtGuard } from "./guards/jwt.guard";
 
 @ApiTags("Auth(로그인) API")
