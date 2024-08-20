@@ -15,13 +15,23 @@ export class NoticeResponseDto {
     @ApiProperty({ example: true, description: "공지사항 고정 여부" })
     pinned: boolean;
 
-    @ApiProperty({description: "첨부파일" })
+    @ApiProperty({
+        example: 
+        {
+            id: 1,
+            name: "파일명",
+            mimeType: "image/png",
+            createdAt: "2021-08-01T00:00:00.000",
+            updatedAt: "2021-08-01T00:00:00.000",
+            noticeId: 1
+        },
+        description: "첨부파일" })
     files: FileResponseDto[];
 
-    @ApiProperty({ example: "2021-08-01T00:00:00.000Z", description: "생성일" })
+    @ApiProperty({ example: "2021-08-01T00:00:00.000", description: "생성일" })
     createdAt: Date;
 
-    @ApiProperty({ example: "2021-08-01T00:00:00.000Z", description: "수정일" })
+    @ApiProperty({ example: "2021-08-01T00:00:00.000", description: "수정일" })
     updatedAt: Date;
     
 }
