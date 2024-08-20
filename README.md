@@ -9,3 +9,7 @@ npx prisma migrate dev # db 구성
 
 npm start
 ```
+
+### API 문서
+
+http://localhost:4000/api-docs
