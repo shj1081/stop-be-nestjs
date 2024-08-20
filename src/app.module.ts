@@ -5,9 +5,10 @@ import { AppService } from './app.service';
 import { LoggerContextMiddleware } from './common/middleware/logger.middleware';
 import { AppConfigModule } from './config/app/config.module';
 import { AuthModule } from './modules/auth/auth.module';
+import { NoticeModule } from './modules/notice/notice.module';
 
   @Module({
-  imports: [AppConfigModule, AuthModule, JwtModule.register({})],
+  imports: [AppConfigModule, AuthModule, NoticeModule, JwtModule.register({})],
     controllers: [AppController],
     providers: [AppService, Logger],
   })
