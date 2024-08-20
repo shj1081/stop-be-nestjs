@@ -24,10 +24,10 @@ export class UserTypeGuard implements CanActivate {
     );
 
     // request 의 user 객체에서 type을 가져옴
-    const { type } = request.user;
+    const { UserType } = request.user;
 
     // 허용되지 않는 user type일 경우 예외 발생
-    if (!allowTypes.includes(type))
+    if (!allowTypes.includes(UserType))
       throw new ForbiddenException('올바른 접근이 아닙니다');
 
     return true;
